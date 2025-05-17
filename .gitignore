@@ -1,0 +1,36 @@
+# Odin Language .gitignore
+
+# Compiled binaries and build artifacts
+bin/
+build/
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+*.a
+*.lib
+
+# Odin debug files
+*.pdb
+
+# Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Odin package cache
+.odin/
+
+# Project specific generated files
+ols.json
+
+# Environment variables
+.env
+.env.local
+
+odin-with-john
