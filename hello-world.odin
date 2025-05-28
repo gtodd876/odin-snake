@@ -1,17 +1,8 @@
 package main
 
 import "core:fmt"
+import "core:math/rand"
 import rl "vendor:raylib"
-
-// need square window
-screen_width: i32 : 800
-screen_height: i32 : 800
-// we decided to split the screen into a grid of cells 25x25
-number_of_grid_cells :: 25
-
-snake_head_color := rl.GREEN
-snake_tail_color := rl.DARKGREEN
-grid_line_color := rl.WHITE
 
 direction :: enum {
 	UP,
@@ -19,11 +10,20 @@ direction :: enum {
 	LEFT,
 	RIGHT,
 }
-// an array of arrays in odin
-snake_segments := [3][2]i32{{5, 0}, {4, 0}, {3, 0}}
-snake_head_index: i32 = 0
 
 main :: proc() {
+	number_of_grid_cells :: 25
+
+	snake_head_color := rl.GREEN
+	snake_tail_color := rl.DARKGREEN
+	grid_line_color := rl.WHITE
+	// need square window
+	screen_width: i32 : 800
+	screen_height: i32 : 800
+	// an array of arrays in odin
+	snake_segments: [number_of_grid_cells * number_of_grid_cells][2]i32
+	snake_head_index: i32 = 0
+	snake_length := 1
 	rl.InitWindow(screen_width, screen_height, "Snake 2")
 	rl.SetTargetFPS(60)
 

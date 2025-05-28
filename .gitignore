@@ -17,7 +17,6 @@ build/
 *.pdb
 
 # Editor specific files
-.vscode/
 .idea/
 *.swp
 *.swo
